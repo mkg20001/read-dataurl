@@ -1,6 +1,6 @@
 {
   "name": "read-dataurl",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A tiny package to read dataURLs",
   "main": "src/index.js",
   "scripts": {
