@@ -1,55 +1,55 @@
 'use strict'
 
 function readBlob (str) {
-    let i = 5 // skip data;
+  let i = 5 // skip data;
 
-    let mime = ''
-    let enc = ''
-    let data = ''
+  let mime = ''
+  let enc = ''
+  let data = ''
 
-    let block = 'mime'
+  let block = 'mime'
 
-    while (str.length > i) {
-      let cur = str[i]
+  while (str.length > i) {
+    let cur = str[i]
 
-      switch(block) {
-        case 'mime': {
-          if (cur === ';') {
-            block = 'enc'
-          } else {
-            mime += cur
-          }
-
-          i++
-
-          break
+    switch (block) {
+      case 'mime': {
+        if (cur === ';') {
+          block = 'enc'
+        } else {
+          mime += cur
         }
-        case 'enc': {
-          if (cur === ',') {
-            block = 'data'
-          } else {
-            enc += cur
-          }
 
-          i++
+        i++
 
-          break
+        break
+      }
+      case 'enc': {
+        if (cur === ',') {
+          block = 'data'
+        } else {
+          enc += cur
         }
-        case 'data': {
-          data += cur
-          i++
 
-          break
-        }
-        default: {
-          throw new TypeError('d')
-        }
+        i++
+
+        break
+      }
+      case 'data': {
+        data += cur
+        i++
+
+        break
+      }
+      default: {
+        throw new TypeError('d')
       }
     }
-
-    return {
-      encoding: enc,
-      mime,
-      data
-    }
   }
+
+  return {
+    encoding: enc,
+    mime,
+    data
+  }
+}
