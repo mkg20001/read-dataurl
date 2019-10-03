@@ -13,5 +13,13 @@
     "decode"
   ],
   "author": "Maciej Krüger <mkg20001@gmail.com>",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkg20001/read-dataurl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkg20001/read-dataurl/issues"
+  },
+  "homepage": "https://github.com/mkg20001/read-dataurl#readme"
 }
