@@ -1,0 +1,17 @@
+{
+  "name": "read-dataurl",
+  "version": "0.0.1",
+  "description": "A tiny package to read dataURLs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "read",
+    "dataurl",
+    "parce",
+    "decode"
+  ],
+  "author": "Maciej Krüger <mkg20001@gmail.com>",
+  "license": "MPL-2.0"
+}
