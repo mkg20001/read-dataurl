@@ -1,6 +1,6 @@
 'use strict'
 
-function readBlob (str) {
+function readDataurl (str) {
   let i = 5 // skip data;
 
   let mime = ''
@@ -53,3 +53,26 @@ function readBlob (str) {
     data
   }
 }
+
+const decoders = {
+  base64: (data) => Buffer.from(data, 'base64').toString()
+}
+
+async function decode (str, userDecoders = {}) {
+  const {data, mime, encoding} = readDataurl(str)
+  const decoder = userDecoders[encoding] || decoders[encoding]
+
+  if (!decoder) {
+    throw new Error('No decoder for decoding ' + encoding)
+  }
+
+  const decoded = await decoder(data)
+
+  return {
+    data: decoded,
+    mime
+  }
+}
+
+module.exports = readDataurl
+module.exports.decode = decode
